@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root, input, textarea, button {
+    font-family: 'Mulish', sans-serif;
+    font-size: 62.5%;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header .astronaut {
+    width: 35.0rem;
+    height: 35.0rem;
+    margin-bottom: 1.8rem;
+}
+
+header .arrow-button {
+    width: 50px;
+    height: 90px;
+    margin: 3.5rem 0 9.0rem;
+}
+
+header h1 {
+    font-size: 3.2rem;
+    line-height: 4rem;
+    font-weight: 900;
+    color: #B52184;
+}
+
+header p {
+    font-size: 2.0rem;
+    font-weight: 600;
+    color: #312D64;
+}
+
+main {
+    margin: 0 auto;
+}
+
+#cards {
+    padding: 5.2rem 4.0rem;
+    background-color: #312D64;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+section .boxes-wrapper {
+    background-color: #FFF;
+    gap: 5.2rem;
+    padding: 2.6rem 6.2rem 2.6rem 2.6rem;
+    border-radius: 20px;
+}
+
+.boxes-wrapper img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+.boxes-wrapper h1 {
+    color: #B52184;
+    font-size: 2.6rem;
+    font-weight: 900;
+}
+
+.boxes-wrapper p {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #312D64;
+    margin-top: 1.8rem;
+    text-align: justify;
+    line-height: 2.5rem;
+}
+
+#contact form input::placeholder {
+    padding-left: 2.8rem;
+}
+
+#contact {
+    width: 100%;
+    height: 100%;
+    padding: 7.8rem 4rem 6.5rem 3rem;
+}
+
+form fieldset {
+    border: none;
+}
+
+fieldset legend {
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: #B52184;
+    margin-bottom: 4.3rem;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.input-wrapper input {
+    border-radius: 16px;
+    height: 4.8rem;
+    width: 34.8rem;
+    padding: 1.2rem 1.6rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 100%;
+}
+
+.input-wrapper input, .input-wrapper textarea {
+    border: 0.15rem solid #312d64;
+}
+
+#name {
+    background: url(./assets/person.jpg) no-repeat scroll 1.4rem 1.2rem;
+  }
+  
+#email {
+    background: url(./assets/at.jpg) no-repeat scroll 1.4rem 1.2rem;
+}
+
+textarea {
+    resize: none;
+    width: 34.8rem;
+    height: 12.6rem;
+    padding: 1.2rem 1.6rem;
+    border-radius: 16px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 140%;
+}
+
+form fieldset button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.4rem;
+    background-color: #343193;
+    color: #FFF;
+    padding: 1.6rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 2.4rem;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form fieldset button:hover {
+    background-color: #4a46b1;
+    transition: 0.3s;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #312D64;
+    height: 7.8rem;
+}
+
+footer p {
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #FFF;
+}
+
+/* ANIMATION */
+
+
+header .arrow-button {
+    animation: appear1 1.5s backwards;
+}
+
+.boxes-wrapper img {
+    --delay: .1s;
+    animation: moveMoon 2s var(--delay) backwards;
+}
+
+@keyframes appear1 {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(8.0rem);
+    }
+}
+
+@keyframes moveMoon {
+    from {
+        transform: translateX(20.0rem);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveMoonDesk {
+    from {
+        transform: translateX(15.0rem);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/*  MEDIA QUERIES */
+
+@media (min-width: 1100px) {
+
+    header {
+        display: grid;
+        grid-template-areas: 
+            "explore explore astronaut"
+            "paragraph paragraph astronaut"
+            "button button astronaut";
+        padding-left: 10.9rem;
+    }
+
+    header .astronaut {
+        grid-area: astronaut;
+        width: 62.0rem;
+        height: 55.0rem;
+    }
+
+    header h1 {
+        grid-area: explore;
+        margin-top: 22.0rem;
+        font-size: 4.8rem;
+    }
+
+    header p {
+        grid-area: paragraph;
+        font-size: 2.8rem;
+    }
+
+    header .arrow-button {
+        grid-area: button;
+    }
+
+    #cards {
+        flex-direction: row;
+        padding: 6.4rem 11.1rem 8rem;
+    }
+
+    .boxes-wrapper p {
+        line-height: 3.0rem;
+    }
+
+    .boxes-wrapper img {
+        animation: moveMoonDesk 2s var(--delay) backwards;
+    }
+
+    #contact {
+        background: url(./assets/stars.jpg);
+        background-repeat: no-repeat;
+        background-position: right;
+        padding-left: 7rem;
+    }
+
+    form fieldset button:hover {
+        scale: 1.03;
+    }
+}
